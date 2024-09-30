@@ -1,0 +1,52 @@
+{
+	"private": false,
+	"name": "tw",
+	"version": "0.0.1",
+	"categories": ["Programming Languages"],
+	"displayName": "TW - Templates Workers",
+	"description": "Realce de sintaxe e intelisense para arquivos de templates para workers",
+	"icon": "img/tw.png",
+	"author": "Heleno Salgado",
+	"publisher": "Templates Workers",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"main": "./dist/client.js",
+	"activationEvents": [
+		"onLanguage:tw"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "tw",
+				"extensions": [".tw"],
+				"configuration": "language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "tw",
+				"scopeName": "text.html.tw",
+				"path": "syntaxes/tw.tmLanguage.json"
+			}
+		]
+	},
+	"scripts": {
+		"build": "node scripts/build -- --minify",
+		"watch": "npm run build -- --watch",
+		"pack": "npm run build && vsce package --pre-release",
+		"release": "npm run build && vsce publish --pre-release"
+	},
+	"devDependencies": {
+		"@tw/language-server": "workspace:*",
+		"@types/vscode": "^1.82.0",
+		"@volar/language-server": "~2.4.0",
+		"@volar/vscode": "~2.4.0",
+		"esbuild": "latest",
+		"vsce": "latest"
+	}
+}

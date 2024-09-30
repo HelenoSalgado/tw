@@ -1,0 +1,19 @@
+<!-- type any css in following block to get css completion -->
+<style>
+.foo { 
+    color: aliceblue; 
+}
+</style>
+
+<!-- TS script block support -->
+<script :server>
+let bar: number = 123;
+bar = 1000;
+</script>
+
+<template>
+    <div>{ bar }</div>
+</template>
+
+<!-- type ">" to trigger auto close --> 
+<div></div>

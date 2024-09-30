@@ -1,0 +1,7 @@
+out
+dist
+node_modules
+*.tsbuildinfo
+packages/vscode/*.vsix
+packages/vscode/node_modules
+packages/vscode/dist
